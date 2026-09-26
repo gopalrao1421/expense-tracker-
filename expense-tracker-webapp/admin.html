@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expense Tracker — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="topbar">
+    <div class="brand">Expense Tracker<span>Admin Module</span></div>
+    <div class="who">
+      <span id="whoami"></span><span class="role-badge">Admin</span>
+      <button class="logout" id="logoutBtn">Log Out</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="hero">
+      <div class="stat"><div class="num" id="userCount">0</div><div class="lbl">Registered users</div></div>
+      <div class="stat"><div class="num" id="allTxnCount">0</div><div class="lbl">Total transactions</div></div>
+      <div class="stat"><div class="num" id="allTotal">₹0</div><div class="lbl">Total spent (all users)</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Manage categories</h2>
+      <div class="member-add">
+        <input type="text" id="catInput" placeholder="Add a category, e.g. Health">
+        <button type="button" id="addCatBtn">Add</button>
+      </div>
+      <div class="chip-row" id="catChips"></div>
+    </div>
+
+    <div class="card">
+      <h2>All registered users</h2>
+      <table class="users" id="usersTable">
+        <thead><tr><th>Username</th><th>Role</th><th>Transactions</th><th>Total Spent</th><th></th></tr></thead>
+        <tbody id="usersBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

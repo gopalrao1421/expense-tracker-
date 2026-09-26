@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expense Tracker — User</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="topbar">
+    <div class="brand">Expense Tracker<span>User Module</span></div>
+    <div class="who">
+      <span id="whoami"></span><span class="role-badge">User</span>
+      <button class="logout" id="logoutBtn">Log Out</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="hero">
+      <div class="stat"><div class="num" id="totalSpent">₹0</div><div class="lbl">Total spent</div></div>
+      <div class="stat"><div class="num" id="txnCount">0</div><div class="lbl">Transactions</div></div>
+      <div class="stat"><div class="num" id="topCat">—</div><div class="lbl">Top category</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Group members</h2>
+      <div class="member-add">
+        <input type="text" id="memberInput" placeholder="Add a name, e.g. Asha">
+        <button type="button" id="addMemberBtn">Add</button>
+      </div>
+      <div class="chip-row" id="memberChips"></div>
+    </div>
+
+    <div class="card">
+      <h2>Add an expense</h2>
+      <form id="expenseForm" class="grid-2">
+        <div>
+          <label for="amount">Amount (₹)</label>
+          <input type="number" id="amount" min="0.01" step="0.01" placeholder="0.00" required>
+        </div>
+        <div>
+          <label for="paidBy">Paid by</label>
+          <select id="paidBy" required><option value="">Add a member first</option></select>
+        </div>
+        <div>
+          <label for="category">Category</label>
+          <select id="category" required></select>
+        </div>
+        <div>
+          <label for="date">Date</label>
+          <input type="date" id="date" required>
+        </div>
+        <div class="full">
+          <label for="desc">Description (optional)</label>
+          <input type="text" id="desc" placeholder="e.g. Groceries">
+        </div>
+        <div class="err" id="formErr"></div>
+        <button type="submit" class="add">Add expense</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Spending by category</h2>
+      <div class="bars" id="bars"><p class="empty">Add an expense to see the breakdown.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Spending by person</h2>
+      <div class="bars" id="personBars"><p class="empty">Add an expense to see who's spending.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>Recent expenses</h2>
+      <ul class="list" id="list"></ul>
+    </div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+<script src="js/user.js"></script>
+</body>
+</html>
